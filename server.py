@@ -104,5 +104,3 @@ def api():
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template('imateapot.html', reason="no u"), 418
-
-app.run()
