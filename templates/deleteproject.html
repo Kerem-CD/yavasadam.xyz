@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yavasadam.xyz developer portal</title>
+    <link rel="stylesheet" href="/style/standart.css">
+</head>
+<body>
+    <h1>The password {{password}} is valid</h1>
+    <h2>Which project do you want to delete?</h2>
+    <p style="white-space: pre;">{{data}}</p>
+    <form action="/deleteproject/{{password}}" method="post">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name">
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yavasadam.xyz add project</title>
+    <link rel="stylesheet" href="/style/standart.css">
+</head>
+<body>
+    <h1>The password {{password}} is valid</h1>
+    <form action="/add/{{password}}" method="post">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name">
+        <br>
+        <label for="icon">Icon url (use imgur, or png file)</label>
+        <input type="text" name="icon" id="icon">
+        <br>
+        <label for="link">Link</label>
+        <input type="text" name="link" id="link">
+        <br>
+        <label for="description">Description</label>
+        <input type="text" name="description" id="description">
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
