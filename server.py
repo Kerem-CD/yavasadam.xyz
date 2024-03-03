@@ -3,7 +3,7 @@ import bcrypt
 import json
 import urllib.request
 
-current_pass = bytes(open('password.txt').read(), 'utf-8')
+current_pass = b"$2b$12$3whq2NeGvsWq7CtNcWWhB.Mxerh4z6mmPqxw62HHRO4yoHviGBuCa"
 
 
 app = Flask(__name__)
@@ -70,8 +70,6 @@ def change_password(password):
     if bcrypt.hashpw(bytes(password, 'utf-8'), b'$2b$12$3whq2NeGvsWq7CtNcWWhB.') == current_pass:
         if request.method == 'POST':
             new_password = request.form['newpassword']
-            with open('password.txt', 'w') as f:
-                f.write(str(bcrypt.hashpw(bytes(new_password, 'utf-8'), b'$2b$12$3whq2NeGvsWq7CtNcWWhB.')))
             current_pass = bcrypt.hashpw(bytes(new_password, 'utf-8'), b'$2b$12$3whq2NeGvsWq7CtNcWWhB.')
             return redirect("/")
         else:
