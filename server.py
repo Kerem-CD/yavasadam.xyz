@@ -54,7 +54,7 @@ def add_project(password):
                 "Link": link,
                 "ProjectDescription": description
             })
-            projects = str(projects).replace("\\'","'").replace("\"","\\\"").replace("'", '"')
+            projects = json.dumps(projects)
             with open('projects.json', 'w') as f:
                 f.write(projects)
             return render_template('addproject.html', password=password)
@@ -85,7 +85,7 @@ def delete_project(password):
             projects = open('projects.json').read()
             projects = json.loads(projects)
             projects = [project for project in projects if project['Name'] != name]
-            projects = str(projects).replace("\\'","'").replace("\"","\\\"").replace("'", '"')
+            projects = json.dumps(projects)
             with open('projects.json', 'w') as f:
                 f.write(projects)
             return redirect("/")
